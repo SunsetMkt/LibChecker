@@ -18,7 +18,7 @@ import com.absinthe.libchecker.constant.Constants.NO_LIBS
 import com.absinthe.libchecker.constant.GlobalValues
 import com.absinthe.libchecker.database.entity.LCItem
 import com.absinthe.libchecker.databinding.FragmentPieChartBinding
-import com.absinthe.libchecker.utils.LCAppUtils
+import com.absinthe.libchecker.utils.OsUtils
 import com.absinthe.libchecker.utils.PackageUtils
 import com.absinthe.libchecker.utils.UiUtils
 import com.absinthe.libchecker.utils.extensions.getColor
@@ -311,7 +311,7 @@ class ChartFragment :
     if (h == null) return
     if (mDialog != null && mDialog!!.isShowing()) return
 
-    if (LCAppUtils.atLeastR()) {
+    if (OsUtils.atLeastR()) {
       chartView.performHapticFeedback(HapticFeedbackConstants.CONFIRM)
     }
 

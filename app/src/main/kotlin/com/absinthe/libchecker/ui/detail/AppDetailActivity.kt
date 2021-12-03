@@ -37,6 +37,7 @@ import com.absinthe.libchecker.constant.Constants
 import com.absinthe.libchecker.constant.GlobalValues
 import com.absinthe.libchecker.databinding.ActivityAppDetailBinding
 import com.absinthe.libchecker.ui.app.CheckPackageOnResumingActivity
+import com.absinthe.libchecker.ui.dialog.BaseDialogBuilder
 import com.absinthe.libchecker.ui.fragment.detail.AppBundleBottomSheetDialogFragment
 import com.absinthe.libchecker.ui.fragment.detail.AppInfoBottomSheetDialogFragment
 import com.absinthe.libchecker.ui.fragment.detail.DetailFragmentManager
@@ -66,7 +67,6 @@ import com.absinthe.libchecker.view.detail.ChipGroupView
 import com.absinthe.libchecker.viewmodel.DetailViewModel
 import com.absinthe.libraries.utils.utils.AntiShakeUtils
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.Dispatchers
@@ -333,7 +333,7 @@ class AppDetailActivity :
                     if (AntiShakeUtils.isInvalidClick(chipGroup!!)) {
                       return@addChip
                     }
-                    MaterialAlertDialogBuilder(this@AppDetailActivity)
+                    BaseDialogBuilder(this@AppDetailActivity)
                       .setIcon(R.drawable.ic_kotlin_logo)
                       .setTitle(R.string.kotlin_string)
                       .setMessage(R.string.kotlin_details)

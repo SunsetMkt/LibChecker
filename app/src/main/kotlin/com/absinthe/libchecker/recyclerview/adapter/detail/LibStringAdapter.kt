@@ -19,7 +19,7 @@ import com.absinthe.libchecker.annotation.NATIVE
 import com.absinthe.libchecker.annotation.STATIC
 import com.absinthe.libchecker.bean.DISABLED
 import com.absinthe.libchecker.bean.LibStringItemChip
-import com.absinthe.libchecker.utils.LCAppUtils
+import com.absinthe.libchecker.utils.OsUtils
 import com.absinthe.libchecker.utils.PackageUtils
 import com.absinthe.libchecker.utils.extensions.getColor
 import com.absinthe.libchecker.view.detail.ComponentLibItemView
@@ -83,9 +83,9 @@ class LibStringAdapter(@LibType val type: Int) :
         (holder.itemView as StaticLibItemView).apply {
           libName.text = itemName
           libDetail.let {
-            if (LCAppUtils.atLeastQ()) {
+            if (OsUtils.atLeastQ()) {
               it.breakStrategy = LineBreaker.BREAK_STRATEGY_SIMPLE
-            } else if (LCAppUtils.atLeastO()) {
+            } else if (OsUtils.atLeastO()) {
               @SuppressLint("WrongConstant")
               it.breakStrategy = Layout.BREAK_STRATEGY_SIMPLE
             }

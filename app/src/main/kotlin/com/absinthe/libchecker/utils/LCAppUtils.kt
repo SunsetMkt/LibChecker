@@ -11,7 +11,6 @@ import android.os.Looper
 import android.os.MessageQueue
 import android.view.ContextThemeWrapper
 import android.view.ViewGroup
-import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentActivity
@@ -84,36 +83,6 @@ object LCAppUtils {
     } catch (e: Exception) {
       ColorDrawable(Color.TRANSPARENT)
     }
-  }
-
-  @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.R)
-  fun atLeastR(): Boolean {
-    return Build.VERSION.SDK_INT >= 30
-  }
-
-  @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.Q)
-  fun atLeastQ(): Boolean {
-    return Build.VERSION.SDK_INT >= 29
-  }
-
-  @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.P)
-  fun atLeastP(): Boolean {
-    return Build.VERSION.SDK_INT >= 28
-  }
-
-  @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.O)
-  fun atLeastO(): Boolean {
-    return Build.VERSION.SDK_INT >= 26
-  }
-
-  @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.N_MR1)
-  fun atLeastNMR1(): Boolean {
-    return Build.VERSION.SDK_INT >= 25
-  }
-
-  @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.N)
-  fun atLeastN(): Boolean {
-    return Build.VERSION.SDK_INT >= 24
   }
 
   fun findRuleRegex(string: String, @LibType type: Int): RuleEntity? {

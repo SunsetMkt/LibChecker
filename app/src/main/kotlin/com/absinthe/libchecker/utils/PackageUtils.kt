@@ -943,7 +943,7 @@ object PackageUtils {
    * @return minSdkVersion
    */
   fun getMinSdkVersion(packageInfo: PackageInfo): String {
-    val minSdkVersionValue = if (LCAppUtils.atLeastN()) {
+    val minSdkVersionValue = if (OsUtils.atLeastN()) {
       packageInfo.applicationInfo.minSdkVersion.toString()
     } else {
       val demands = ManifestReader.getManifestProperties(

@@ -8,6 +8,7 @@ import com.absinthe.libchecker.constant.Constants
 import com.absinthe.libchecker.constant.GlobalValues
 import com.absinthe.libchecker.database.Repositories
 import com.absinthe.libchecker.utils.LCAppUtils
+import com.absinthe.libchecker.utils.OsUtils
 import com.absinthe.libchecker.utils.timber.ReleaseTree
 import com.absinthe.libchecker.utils.timber.ThreadAwareDebugTree
 import com.absinthe.libraries.utils.utils.Utility
@@ -30,7 +31,7 @@ class LibCheckerApp : Application() {
       return
     }
 
-    if (LCAppUtils.atLeastP()) {
+    if (OsUtils.atLeastP()) {
       HiddenApiBypass.addHiddenApiExemptions("")
     }
 

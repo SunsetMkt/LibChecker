@@ -59,7 +59,7 @@ object Toasty {
     toast?.get()?.cancel()
     toast = null
 
-    if (LCAppUtils.atLeastR() && context !is ContextThemeWrapper) {
+    if (OsUtils.atLeastR() && context !is ContextThemeWrapper) {
       Toast(context).also {
         it.duration = duration
         it.setText(message)
